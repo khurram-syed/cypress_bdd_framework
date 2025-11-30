@@ -1,66 +1,61 @@
-name: Cypress BDD CI
+name: Cypress BDD Tests
 
 on:
+  # Trigger on push to main branch
   push:
-    branches: [ "main" ]
-
+    branches:
+      - main
+  
+  # Manual trigger with inputs
   workflow_dispatch:
     inputs:
       tags:
-        description: "Run scenarios with Cucumber tags (e.g., @smoke, @login, @articles, @newArticle)."
-        required: false
-        default: "@smoke"
-      browser:
-        type: choice
-        description: "Browser to run tests"
+        description: 'Cucumber tags (e.g., @smoke, @login, @articles, @newArticle)'
         required: true
-        default: "chrome"
+        default: '@smoke'
+      browser:
+        description: 'Browser to run tests'
+        required: true
+        type: choice
         options:
           - chrome
           - edge
+        default: chrome
+
 permissions:
   contents: write
   pages: write
   id-token: write
 
 jobs:
-  cypress-run:
+  cypress-tests:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # 1. Checkout project
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: '18'
           cache: 'npm'
 
-      # 3. Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      # 4. Clean reports
-      - name: Clean previous reports
-        run: npm run clean:reports
-    
       - name: Run Cypress tests (Main branch)
         if: github.event_name == 'push'
         run: npm run test:ci
-     
-        # 5. Run tests with manual tag & browser
+
       - name: Run Cypress tests (Manual with tags)
         if: github.event_name == 'workflow_dispatch'
-        run: npx cypress run --browser ${{ inputs.browser || 'chrome'}} --headless --env TAGS="${{ inputs.tags }}"
+        run: npx cypress run --browser ${{ inputs.browser }} --headless --env TAGS="${{ inputs.tags }}"
 
-      # 6. Generate Cucumber HTML report
       - name: Generate Cucumber HTML Report
+        if: always()
         run: npm run report:cucumber
-      
-      # 6b. List generated files
+
       - name: List generated files
         if: always()
         run: |
@@ -69,8 +64,7 @@ jobs:
           echo ""
           echo "📄 Looking for index.html:"
           find cypress/reports -name "index.html" || echo "No index.html found!"
-     
-      # 7 Upload Cucumber HTML Report
+
       - name: Upload Cucumber HTML Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -78,8 +72,7 @@ jobs:
           name: cucumber-report-${{ github.run_number }}
           path: cypress/reports/
           retention-days: 30
-     
-      # 8 Deploy Cucumber HTML Report
+
       - name: Deploy Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
