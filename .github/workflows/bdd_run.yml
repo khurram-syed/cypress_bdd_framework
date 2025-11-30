@@ -75,17 +75,11 @@ jobs:
       # 9. Report URL in Comments   
       - name: Comment Report URL
         if: always()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const reportUrl = `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html`;
-            console.log(`📊 Report available at: ${reportUrl}`);
-            
-            if (context.eventName === 'workflow_dispatch') {
-              github.rest.repos.createCommitComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                commit_sha: context.sha,
-                body: `## 🧪 Test Report\n\n📊 View HTML Report: [Click Here](${reportUrl})\n\n**Browser:** ${{ inputs.browser }}\n**Tags:** ${{ inputs.tags }}`
-              });
-            }
+        run: |
+          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/index.html"
+          echo "📊 Report URL: $REPORT_URL"
+          echo ""
+          echo "🔗 Direct link to reports folder:"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/"
+          echo ""
+          echo "⏳ Note: GitHub Pages may take 1-2 minutes to deploy. If you see 404, wait a moment and refresh."
