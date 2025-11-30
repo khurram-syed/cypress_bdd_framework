@@ -9,7 +9,7 @@ on:
       tags:
         description: "Run scenarios with tags (e.g. @smoke, @login, @articles). Leave empty for all tests."
         required: false
-        default: ""
+        default: "@smoke"
       browser:
         type: choice
         description: "Browser to run tests"
@@ -32,7 +32,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "22"
 
       # 3. Install dependencies
       - name: Install dependencies
