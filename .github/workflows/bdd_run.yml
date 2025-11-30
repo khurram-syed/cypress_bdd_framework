@@ -83,17 +83,54 @@ jobs:
           keep_files: true
           enable_jekyll: false
 
-      - name: Wait for GitHub Pages Deployment
-        if: always()
-        run: sleep 10
-
-      - name: Comment Report URL
+      # 9. Verify GitHub Pages Deployment  
+      - name: Verify Deployment
         if: always()
         run: |
-          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/index.html"
-          echo "📊 Report URL: $REPORT_URL"
+          echo "✅ Deployment completed!"
           echo ""
-          echo "🔗 Direct link to reports folder:"
-          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/"
+          echo "📊 Report should be available at:"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/cucumber-html/index.html"
           echo ""
-          echo "⏳ Note: GitHub Pages may take 1-2 minutes to deploy. If you see 404, wait a moment and refresh."
+          echo "🔍 Checking gh-pages branch..."
+          git fetch origin gh-pages || echo "gh-pages branch not found"
+          echo ""
+          echo "⏳ GitHub Pages may take 1-2 minutes to build and deploy."
+          echo "📌 Make sure GitHub Pages is enabled in Settings → Pages → Source: gh-pages branch"
+
+      # 9b. Add Report Link to Summary
+      - name: Add Report to Job Summary
+        if: always()
+        run: |
+          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/cucumber-html/index.html"
+          echo "## 🧪 Cypress BDD Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📊 **[View Cucumber HTML Report]($REPORT_URL)**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Test Details:" >> $GITHUB_STEP_SUMMARY
+          echo "- **Run Number:** ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Browser:** ${{ github.event.inputs.browser || 'chrome' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tags:** ${{ github.event.inputs.tags || 'all tests' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> ⏳ *Note: If the report link shows 404, wait 1-2 minutes for GitHub Pages to deploy, then refresh.*" >> $GITHUB_STEP_SUMMARY
+
+      # 10. Report URL in Comments 
+      - name: Comment Report URL
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const reportUrl = `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/cucumber-html/index.html`;
+            console.log(`📊 Report available at: ${reportUrl}`);
+            
+            if (context.eventName === 'workflow_dispatch') {
+              github.rest.repos.createCommitComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: context.sha,
+                body: `## 🧪 Cypress BDD Test Report\n\n📊 **View HTML Report:** [Click Here](${reportUrl})\n\n**Browser:** ${{ github.event.inputs.browser }}\n**Tags:** ${{ github.event.inputs.tags }}\n**Run Number:** ${{ github.run_number }}\n\n⏳ *Note: If you see 404, wait 1-2 minutes for GitHub Pages deployment.*`
+              });
+            }
