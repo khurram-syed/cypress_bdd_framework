@@ -53,7 +53,16 @@ jobs:
       # 6. Generate Cucumber HTML report
       - name: Generate Cucumber HTML Report
         run: npm run report:cucumber
-
+      
+      # 6b. List generated files
+      - name: List generated files
+        if: always()
+        run: |
+          echo "📁 Checking report files:"
+          ls -R cypress/reports/ || echo "No reports folder found!"
+          echo ""
+          echo "📄 Looking for index.html:"
+          find cypress/reports -name "index.html" || echo "No index.html found!"
       # 7. Upload report artifact (UPDATED TO v4)
       - name: Upload Cucumber HTML Report
         uses: actions/upload-artifact@v4
