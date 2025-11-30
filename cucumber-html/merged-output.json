@@ -1,0 +1,219 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "1-articles-in-signed-out-state;11-verify-first-article-in-signed-out-state",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "11-Verify First Article in Signed-out state",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I navigate to the Conduit home page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1221000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I should see the user is logged out",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click on the first article",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1384000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see the article name \"Discover Bondar Academy:\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I should see the tag \"QA Skills\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@articles",
+            "line": 1
+          },
+          {
+            "name": "@smoke",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "1-articles-in-signed-out-state",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "1-Articles in Signed-out state",
+    "tags": [
+      {
+        "name": "@articles",
+        "line": 1
+      }
+    ],
+    "uri": "cypress/e2e/features/articles.feature",
+    "metadata": {
+      "reportTime": "2025/11/30 21:39:19",
+      "browser": {
+        "name": "chrome",
+        "version": "latest"
+      },
+      "device": "Local Test Machine",
+      "platform": {
+        "name": "linux",
+        "version": "v22.21.1"
+      }
+    }
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "2-login-functionality;22-check-for-valid-login",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "22-Check for valid login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 272000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "username",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "emailkasyed@gmail.com",
+                      "12345678"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I enter login credentials",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 945000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 251000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@smoke",
+            "line": 11
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "2-login-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "2-Login functionality",
+    "tags": [
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "cypress/e2e/features/login.feature",
+    "metadata": {
+      "reportTime": "2025/11/30 21:39:19",
+      "browser": {
+        "name": "chrome",
+        "version": "latest"
+      },
+      "device": "Local Test Machine",
+      "platform": {
+        "name": "linux",
+        "version": "v22.21.1"
+      }
+    }
+  }
+]
