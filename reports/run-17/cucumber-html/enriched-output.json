@@ -1,0 +1,540 @@
+{
+  "app": 0,
+  "customMetadata": false,
+  "customData": {
+    "title": "Test Run Information",
+    "data": [
+      {
+        "label": "Project",
+        "value": "cypress-bdd-framework"
+      },
+      {
+        "label": "Version",
+        "value": "1.0.0"
+      },
+      {
+        "label": "Author",
+        "value": "KSyed"
+      },
+      {
+        "label": "Execution Date",
+        "value": "11/30/2025, 11:29:10 PM"
+      },
+      {
+        "label": "Environment",
+        "value": "https://conduit.bondaracademy.com"
+      },
+      {
+        "label": "Test Type",
+        "value": "BDD Cucumber Tests"
+      }
+    ]
+  },
+  "style": "style.css",
+  "customStyle": "",
+  "useCDN": false,
+  "hideMetadata": false,
+  "displayReportTime": true,
+  "displayDuration": true,
+  "browser": 3,
+  "name": "",
+  "version": "version",
+  "time": "2025-11-30T23:29:10.505Z",
+  "features": [
+    {
+      "description": "",
+      "elements": [
+        {
+          "description": "",
+          "id": "1-articles-in-signed-out-state;11-verify-first-article-in-signed-out-state",
+          "keyword": "Scenario",
+          "line": 5,
+          "name": "11-Verify First Article in Signed-out state",
+          "steps": [
+            {
+              "arguments": [],
+              "keyword": "Given ",
+              "line": 6,
+              "name": "I navigate to the Conduit home page",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 1259000000
+              },
+              "time": "349:43:20.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "And ",
+              "line": 7,
+              "name": "I should see the user is logged out",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 38000000
+              },
+              "time": "10:33:20.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "When ",
+              "line": 8,
+              "name": "I click on the first article",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 1134000000
+              },
+              "time": "315:00:00.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "Then ",
+              "line": 9,
+              "name": "I should see the article name \"Discover Bondar Academy:\"",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 15000000
+              },
+              "time": "04:10:00.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "And ",
+              "line": 10,
+              "name": "I should see the tag \"QA Skills\"",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 31000000
+              },
+              "time": "08:36:40.000"
+            }
+          ],
+          "tags": [
+            {
+              "name": "@articles",
+              "line": 1
+            },
+            {
+              "name": "@smoke",
+              "line": 4
+            }
+          ],
+          "type": "scenario",
+          "passed": 5,
+          "failed": 0,
+          "notDefined": 0,
+          "skipped": 0,
+          "pending": 0,
+          "ambiguous": 0,
+          "duration": 2477000000,
+          "time": "688:03:20.000"
+        }
+      ],
+      "id": "f8818ec4-738d-48cc-a5be-c1aece0a0045-1-articles-in-signed-out-state",
+      "line": 2,
+      "keyword": "Feature",
+      "name": "1-Articles in Signed-out state",
+      "tags": [
+        {
+          "name": "@articles",
+          "line": 1
+        }
+      ],
+      "uri": "cypress/e2e/features/articles.feature",
+      "metadata": {
+        "reportTime": "2025/11/30 23:29:10",
+        "browser": {
+          "name": "chrome",
+          "version": "latest"
+        },
+        "device": "Local Test Machine",
+        "platform": {
+          "name": "linux",
+          "version": "v22.21.1"
+        }
+      },
+      "scenarios": {
+        "passed": 1,
+        "failed": 0,
+        "notDefined": 0,
+        "skipped": 0,
+        "pending": 0,
+        "ambiguous": 0,
+        "passedPercentage": "100.00",
+        "failedPercentage": "0.00",
+        "notDefinedPercentage": "0.00",
+        "skippedPercentage": "0.00",
+        "pendingPercentage": "0.00",
+        "ambiguousPercentage": "0.00",
+        "total": 1
+      },
+      "duration": 2477000000,
+      "time": "688:03:20.000",
+      "isFailed": false,
+      "isAmbiguous": false,
+      "isSkipped": false,
+      "isNotdefined": false,
+      "isPending": false,
+      "app": 0,
+      "browser": 0,
+      "passed": null,
+      "totalTime": null
+    },
+    {
+      "description": "",
+      "elements": [
+        {
+          "description": "",
+          "id": "2-login-functionality;22-check-for-valid-login",
+          "keyword": "Scenario",
+          "line": 12,
+          "name": "22-Check for valid login",
+          "steps": [
+            {
+              "arguments": [],
+              "keyword": "Given ",
+              "line": 13,
+              "name": "I navigate to the login page",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 292000000
+              },
+              "time": "81:06:40.000"
+            },
+            {
+              "arguments": [
+                {
+                  "rows": [
+                    {
+                      "cells": [
+                        "username",
+                        "password"
+                      ]
+                    },
+                    {
+                      "cells": [
+                        "emailkasyed@gmail.com",
+                        "12345678"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "keyword": "When ",
+              "line": 14,
+              "name": "I enter login credentials",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 908000000
+              },
+              "time": "252:13:20.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "Then ",
+              "line": 17,
+              "name": "I should be logged in successfully",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 209000000
+              },
+              "time": "58:03:20.000"
+            }
+          ],
+          "tags": [
+            {
+              "name": "@login",
+              "line": 1
+            },
+            {
+              "name": "@smoke",
+              "line": 11
+            }
+          ],
+          "type": "scenario",
+          "passed": 3,
+          "failed": 0,
+          "notDefined": 0,
+          "skipped": 0,
+          "pending": 0,
+          "ambiguous": 0,
+          "duration": 1409000000,
+          "time": "391:23:20.000"
+        }
+      ],
+      "id": "89423ace-6a8f-4caf-b5b9-d9a44b50d0ae-2-login-functionality",
+      "line": 2,
+      "keyword": "Feature",
+      "name": "2-Login functionality",
+      "tags": [
+        {
+          "name": "@login",
+          "line": 1
+        }
+      ],
+      "uri": "cypress/e2e/features/login.feature",
+      "metadata": {
+        "reportTime": "2025/11/30 23:29:10",
+        "browser": {
+          "name": "chrome",
+          "version": "latest"
+        },
+        "device": "Local Test Machine",
+        "platform": {
+          "name": "linux",
+          "version": "v22.21.1"
+        }
+      },
+      "scenarios": {
+        "passed": 1,
+        "failed": 0,
+        "notDefined": 0,
+        "skipped": 0,
+        "pending": 0,
+        "ambiguous": 0,
+        "passedPercentage": "100.00",
+        "failedPercentage": "0.00",
+        "notDefinedPercentage": "0.00",
+        "skippedPercentage": "0.00",
+        "pendingPercentage": "0.00",
+        "ambiguousPercentage": "0.00",
+        "total": 1
+      },
+      "duration": 1409000000,
+      "time": "391:23:20.000",
+      "isFailed": false,
+      "isAmbiguous": false,
+      "isSkipped": false,
+      "isNotdefined": false,
+      "isPending": false,
+      "app": 0,
+      "browser": 0,
+      "passed": null,
+      "totalTime": null
+    },
+    {
+      "description": "",
+      "elements": [
+        {
+          "description": "",
+          "id": "3-add-new-articles;31-create-a-new-article",
+          "keyword": "Scenario",
+          "line": 4,
+          "name": "31-Create a new Article",
+          "steps": [
+            {
+              "arguments": [],
+              "keyword": "Given ",
+              "line": 5,
+              "name": "I am logged in with valid credentials",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 1202000000
+              },
+              "time": "333:53:20.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "When ",
+              "line": 6,
+              "name": "I navigate to the New Article page",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 211000000
+              },
+              "time": "58:36:40.000"
+            },
+            {
+              "arguments": [
+                {
+                  "rows": [
+                    {
+                      "cells": [
+                        "Field",
+                        "Value"
+                      ]
+                    },
+                    {
+                      "cells": [
+                        "Title",
+                        "New Article"
+                      ]
+                    },
+                    {
+                      "cells": [
+                        "Description",
+                        "This is a new article"
+                      ]
+                    },
+                    {
+                      "cells": [
+                        "Body",
+                        "This is to test the cypress testing framework"
+                      ]
+                    },
+                    {
+                      "cells": [
+                        "Tags",
+                        "QACypress"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "keyword": "And ",
+              "line": 7,
+              "name": "I create the new article with the following details",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 1880000000
+              },
+              "time": "522:13:20.000"
+            },
+            {
+              "arguments": [],
+              "keyword": "Then ",
+              "line": 13,
+              "name": "I should see the article page with title \"New Article\"",
+              "match": {
+                "location": "not available:0"
+              },
+              "result": {
+                "status": "failed",
+                "duration": 4148000000,
+                "error_message": "Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it."
+              },
+              "time": "1152:13:20.000"
+            }
+          ],
+          "tags": [
+            {
+              "name": "@newArticle",
+              "line": 1
+            }
+          ],
+          "type": "scenario",
+          "passed": 3,
+          "failed": 1,
+          "notDefined": 0,
+          "skipped": 0,
+          "pending": 0,
+          "ambiguous": 0,
+          "duration": 7441000000,
+          "time": "2066:56:40.000"
+        }
+      ],
+      "id": "4054bb12-40f0-495e-8687-66d85cd84582-3-add-new-articles",
+      "line": 2,
+      "keyword": "Feature",
+      "name": "3-Add new articles",
+      "tags": [
+        {
+          "name": "@newArticle",
+          "line": 1
+        }
+      ],
+      "uri": "cypress/e2e/features/newArticle.feature",
+      "metadata": {
+        "reportTime": "2025/11/30 23:29:10",
+        "browser": {
+          "name": "chrome",
+          "version": "latest"
+        },
+        "device": "Local Test Machine",
+        "platform": {
+          "name": "linux",
+          "version": "v22.21.1"
+        }
+      },
+      "scenarios": {
+        "passed": 0,
+        "failed": 1,
+        "notDefined": 0,
+        "skipped": 0,
+        "pending": 0,
+        "ambiguous": 0,
+        "passedPercentage": "0.00",
+        "failedPercentage": "100.00",
+        "notDefinedPercentage": "0.00",
+        "skippedPercentage": "0.00",
+        "pendingPercentage": "0.00",
+        "ambiguousPercentage": "0.00",
+        "total": 1
+      },
+      "duration": 7441000000,
+      "time": "2066:56:40.000",
+      "isFailed": true,
+      "isAmbiguous": false,
+      "isSkipped": false,
+      "isNotdefined": false,
+      "isPending": false,
+      "app": 0,
+      "browser": 0,
+      "failed": null,
+      "totalTime": null
+    }
+  ],
+  "featureCount": {
+    "ambiguous": 0,
+    "failed": 1,
+    "passed": 2,
+    "notDefined": 0,
+    "pending": 0,
+    "skipped": 0,
+    "total": 3,
+    "ambiguousPercentage": "0.00",
+    "failedPercentage": "33.33",
+    "notDefinedPercentage": "0.00",
+    "pendingPercentage": "0.00",
+    "skippedPercentage": "0.00",
+    "passedPercentage": "66.67"
+  },
+  "reportName": "Cypress BDD Cucumber Report",
+  "scenarios": {
+    "failed": 1,
+    "ambiguous": 0,
+    "notDefined": 0,
+    "pending": 0,
+    "skipped": 0,
+    "passed": 2,
+    "total": 3,
+    "ambiguousPercentage": "0.00",
+    "failedPercentage": "33.33",
+    "notDefinedPercentage": "0.00",
+    "passedPercentage": "66.67",
+    "pendingPercentage": "0.00",
+    "skippedPercentage": "0.00"
+  },
+  "totalTime": 0
+}

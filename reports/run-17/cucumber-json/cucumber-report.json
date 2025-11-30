@@ -1,0 +1,315 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "1-articles-in-signed-out-state;11-verify-first-article-in-signed-out-state",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "11-Verify First Article in Signed-out state",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I navigate to the Conduit home page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1259000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I should see the user is logged out",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click on the first article",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1134000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see the article name \"Discover Bondar Academy:\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I should see the tag \"QA Skills\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@articles",
+            "line": 1
+          },
+          {
+            "name": "@smoke",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "1-articles-in-signed-out-state",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "1-Articles in Signed-out state",
+    "tags": [
+      {
+        "name": "@articles",
+        "line": 1
+      }
+    ],
+    "uri": "cypress/e2e/features/articles.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "2-login-functionality;22-check-for-valid-login",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "22-Check for valid login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 292000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "username",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "emailkasyed@gmail.com",
+                      "12345678"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I enter login credentials",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 908000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 209000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@smoke",
+            "line": 11
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "2-login-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "2-Login functionality",
+    "tags": [
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "cypress/e2e/features/login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "3-add-new-articles;31-create-a-new-article",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "31-Create a new Article",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am logged in with valid credentials",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1202000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I navigate to the New Article page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 211000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Field",
+                      "Value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Title",
+                      "New Article"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Description",
+                      "This is a new article"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Body",
+                      "This is to test the cypress testing framework"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Tags",
+                      "QACypress"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I create the new article with the following details",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1880000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should see the article page with title \"New Article\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4148000000,
+              "error_message": "Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it."
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@newArticle",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "3-add-new-articles",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "3-Add new articles",
+    "tags": [
+      {
+        "name": "@newArticle",
+        "line": 1
+      }
+    ],
+    "uri": "cypress/e2e/features/newArticle.feature"
+  }
+]
