@@ -67,10 +67,10 @@ jobs:
       - name: Upload Cucumber HTML Report
         uses: actions/upload-artifact@v4
         with:
-          name: cucumber-report-${{ github.run_number }}
+          name: cucumber-bdd-report
           path: cypress/reports/
           retention-days: 30
-
+          
       # 8. Deploy HTML report to GitHub Pages
       - name: Deploy Cucumber Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -79,9 +79,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: cypress/reports
-          destination_dir: reports/run-${{ github.run_number }}
           keep_files: true
-          enable_jekyll: false
      
       # 9. Wait for Page for Deployment  
       - name: Wait for GitHub Pages Deployment
@@ -91,11 +89,17 @@ jobs:
       # 10. Report URL in Comments 
       - name: Comment Report URL
         if: always()
-        run: |
-          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/index.html"
-          echo "📊 Report URL: $REPORT_URL"
-          echo ""
-          echo "🔗 Direct link to reports folder:"
-          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/"
-          echo ""
-          echo "⏳ Note: GitHub Pages may take 1-2 minutes to deploy. If you see 404, wait a moment and refresh."
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const reportUrl = `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html`;
+            console.log(`📊 Report available at: ${reportUrl}`);
+            
+            if (context.eventName === 'workflow_dispatch') {
+              github.rest.repos.createCommitComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: context.sha,
+                body: `## 🧪 Test Report\n\n📊 View HTML Report: [Click Here](${reportUrl})\n\n**Browser:** ${{ inputs.browser }}\n**Tags:** ${{ inputs.tags }}`
+              });
+            }
