@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Date",
-        "value": "11/30/2025, 9:39:19 PM"
+        "value": "11/30/2025, 10:18:16 PM"
       },
       {
         "label": "Environment",
@@ -39,7 +39,7 @@
   "browser": 2,
   "name": "",
   "version": "version",
-  "time": "2025-11-30T21:39:19.405Z",
+  "time": "2025-11-30T22:18:16.021Z",
   "features": [
     {
       "description": "",
@@ -61,9 +61,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 1221000000
+                "duration": 792000000
               },
-              "time": "339:10:00.000"
+              "time": "220:00:00.000"
             },
             {
               "arguments": [],
@@ -75,9 +75,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 33000000
+                "duration": 31000000
               },
-              "time": "09:10:00.000"
+              "time": "08:36:40.000"
             },
             {
               "arguments": [],
@@ -89,9 +89,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 1384000000
+                "duration": 992000000
               },
-              "time": "384:26:40.000"
+              "time": "275:33:20.000"
             },
             {
               "arguments": [],
@@ -103,9 +103,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 13000000
+                "duration": 23000000
               },
-              "time": "03:36:40.000"
+              "time": "06:23:20.000"
             },
             {
               "arguments": [],
@@ -117,9 +117,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 22000000
+                "duration": 20000000
               },
-              "time": "06:06:40.000"
+              "time": "05:33:20.000"
             }
           ],
           "tags": [
@@ -139,11 +139,11 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 2673000000,
-          "time": "742:30:00.000"
+          "duration": 1858000000,
+          "time": "516:06:40.000"
         }
       ],
-      "id": "5ecfbfc9-fc04-4722-afea-656d8ff26cf6-1-articles-in-signed-out-state",
+      "id": "a8c6851f-1ad5-4fe3-ab20-785ac7b6e601-1-articles-in-signed-out-state",
       "line": 2,
       "keyword": "Feature",
       "name": "1-Articles in Signed-out state",
@@ -155,7 +155,7 @@
       ],
       "uri": "cypress/e2e/features/articles.feature",
       "metadata": {
-        "reportTime": "2025/11/30 21:39:19",
+        "reportTime": "2025/11/30 22:18:15",
         "browser": {
           "name": "chrome",
           "version": "latest"
@@ -181,8 +181,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 2673000000,
-      "time": "742:30:00.000",
+      "duration": 1858000000,
+      "time": "516:06:40.000",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,
@@ -213,9 +213,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 272000000
+                "duration": 304000000
               },
-              "time": "75:33:20.000"
+              "time": "84:26:40.000"
             },
             {
               "arguments": [
@@ -258,9 +258,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 251000000
+                "duration": 161000000
               },
-              "time": "69:43:20.000"
+              "time": "44:43:20.000"
             }
           ],
           "tags": [
@@ -280,11 +280,11 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 1468000000,
-          "time": "407:46:40.000"
+          "duration": 1410000000,
+          "time": "391:40:00.000"
         }
       ],
-      "id": "66ccf1d2-78be-4d3e-b07d-abdac04f5bcf-2-login-functionality",
+      "id": "d518eab7-b329-4b96-a3da-f5a0bb528424-2-login-functionality",
       "line": 2,
       "keyword": "Feature",
       "name": "2-Login functionality",
@@ -296,7 +296,7 @@
       ],
       "uri": "cypress/e2e/features/login.feature",
       "metadata": {
-        "reportTime": "2025/11/30 21:39:19",
+        "reportTime": "2025/11/30 22:18:15",
         "browser": {
           "name": "chrome",
           "version": "latest"
@@ -322,8 +322,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 1468000000,
-      "time": "407:46:40.000",
+      "duration": 1410000000,
+      "time": "391:40:00.000",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,

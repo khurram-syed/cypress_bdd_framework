@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1221000000
+              "duration": 792000000
             }
           },
           {
@@ -32,7 +32,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33000000
+              "duration": 31000000
             }
           },
           {
@@ -45,7 +45,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1384000000
+              "duration": 992000000
             }
           },
           {
@@ -58,7 +58,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13000000
+              "duration": 23000000
             }
           },
           {
@@ -71,7 +71,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 20000000
             }
           }
         ],
@@ -100,7 +100,7 @@
     ],
     "uri": "cypress/e2e/features/articles.feature",
     "metadata": {
-      "reportTime": "2025/11/30 21:39:19",
+      "reportTime": "2025/11/30 22:18:15",
       "browser": {
         "name": "chrome",
         "version": "latest"
@@ -132,7 +132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 272000000
+              "duration": 304000000
             }
           },
           {
@@ -175,7 +175,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 251000000
+              "duration": 161000000
             }
           }
         ],
@@ -204,7 +204,7 @@
     ],
     "uri": "cypress/e2e/features/login.feature",
     "metadata": {
-      "reportTime": "2025/11/30 21:39:19",
+      "reportTime": "2025/11/30 22:18:15",
       "browser": {
         "name": "chrome",
         "version": "latest"

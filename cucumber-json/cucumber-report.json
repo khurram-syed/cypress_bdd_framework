@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 979000000
+              "duration": 792000000
             }
           },
           {
@@ -32,7 +32,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 60000000
+              "duration": 31000000
             }
           },
           {
@@ -45,7 +45,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 945000000
+              "duration": 992000000
             }
           },
           {
@@ -58,7 +58,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24000000
+              "duration": 23000000
             }
           },
           {
@@ -71,7 +71,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 20000000
             }
           }
         ],
@@ -105,78 +105,6 @@
     "elements": [
       {
         "description": "",
-        "id": "2-login-functionality;21-check-for-invalid-login",
-        "keyword": "Scenario",
-        "line": 4,
-        "name": "21-Check for invalid login",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 5,
-            "name": "I navigate to the login page",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 284000000
-            }
-          },
-          {
-            "arguments": [
-              {
-                "rows": [
-                  {
-                    "cells": [
-                      "username",
-                      "password"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "emailkasyed@gmail.com",
-                      "11111"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "keyword": "When ",
-            "line": 6,
-            "name": "I enter login credentials",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 891000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "I should see the login error \"email or password is invalid\"",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 193000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@login",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
         "id": "2-login-functionality;22-check-for-valid-login",
         "keyword": "Scenario",
         "line": 12,
@@ -192,7 +120,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 125000000
+              "duration": 304000000
             }
           },
           {
@@ -222,7 +150,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 812000000
+              "duration": 945000000
             }
           },
           {
@@ -235,7 +163,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 116000000
+              "duration": 161000000
             }
           }
         ],
@@ -263,125 +191,5 @@
       }
     ],
     "uri": "cypress/e2e/features/login.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "3-add-new-articles;31-create-a-new-article",
-        "keyword": "Scenario",
-        "line": 4,
-        "name": "31-Create a new Article",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 5,
-            "name": "I am logged in with valid credentials",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1210000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
-            "name": "I navigate to the New Article page",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 240000000
-            }
-          },
-          {
-            "arguments": [
-              {
-                "rows": [
-                  {
-                    "cells": [
-                      "Field",
-                      "Value"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "Title",
-                      "New Article"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "Description",
-                      "This is a new article"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "Body",
-                      "This is to test the cypress testing framework"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "Tags",
-                      "QACypress"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "keyword": "And ",
-            "line": 7,
-            "name": "I create the new article with the following details",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1915000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 13,
-            "name": "I should see the article page with title \"New Article\"",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 4175000000,
-              "error_message": "Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it."
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@newArticle",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "3-add-new-articles",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "3-Add new articles",
-    "tags": [
-      {
-        "name": "@newArticle",
-        "line": 1
-      }
-    ],
-    "uri": "cypress/e2e/features/newArticle.feature"
   }
 ]
