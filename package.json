@@ -7,14 +7,22 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:smoke": "cypress run --env TAGS='@smoke'",
+    "cy:run:login": "cypress run --env TAGS='@login'",
     "cy:run:articles": "cypress run --env TAGS='@articles'",
-    "cy:run:newArticle": "cypress run --env TAGS='@newArticle'"
+    "cy:run:newArticle": "cypress run --env TAGS='@newArticle'",
+    "test:ci": "cypress run --browser chrome --headless",
+    "test:headed": "cypress run --headed --browser chrome",
+    "report:cucumber": "node generate-cucumber-report.js",
+    "clean:reports": "rm -rf cypress/reports cypress/screenshots cypress/videos || true",
+    "test:report": "npm run clean:reports && npm run cy:run && npm run report:cucumber",
+    "test:all": "npm run clean:reports && npm run cy:run && npm run report:cucumber"
   },
   "author": "KSyed",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
     "cypress": "^15.7.0",
-    "esbuild": "^0.27.0"
+    "esbuild": "^0.27.0",
+    "multiple-cucumber-html-reporter": "^3.9.3"
   }
 }

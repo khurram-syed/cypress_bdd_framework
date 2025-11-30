@@ -1,5 +1,18 @@
 {
     "stepDefinitions": [
         "cypress/e2e/step_definitions/**/*.js"
-    ]
+    ],
+    "json": {
+        "enabled": true,
+        "output": "cypress/reports/cucumber-json/cucumber-report.json",
+        "formatter": "cucumber-json-formatter"
+    },
+    "html": {
+        "enabled": false
+    },
+    "messages": {
+        "enabled": false
+    },
+    "filterSpecs": true,
+    "omitFiltered": true
 }
