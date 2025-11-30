@@ -38,30 +38,30 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Clean old reports
-      - name: Clean reports
+      # 4. Clean reports
+      - name: Clean previous reports
         run: npm run clean:reports
 
-      # 5. Run Cypress with tags & browser
+      # 5. Run tests with manual tag & browser
       - name: Run Cypress Tests
         run: |
           npx cypress run \
             --browser ${{ github.event.inputs.browser || 'chrome' }} \
             --env TAGS="${{ github.event.inputs.tags }}"
-      
+
       # 6. Generate Cucumber HTML report
       - name: Generate Cucumber HTML Report
         run: npm run report:cucumber
 
-      # 7. Upload report as downloadable artifact
-      - name: Upload HTML Report Artifact
-        uses: actions/upload-artifact@v3
+      # 7. Upload report artifact (UPDATED TO v4)
+      - name: Upload Cucumber HTML Report
+        uses: actions/upload-artifact@v4
         with:
           name: cucumber-bdd-report
           path: cypress/reports/
 
-      # 8. Deploy the report to GitHub Pages
-      - name: Deploy Cucumber HTML Report to GitHub Pages
+      # 8. Deploy HTML report to GitHub Pages
+      - name: Deploy Cucumber Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
