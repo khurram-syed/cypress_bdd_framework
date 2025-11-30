@@ -58,7 +58,7 @@ jobs:
       - name: Upload Cucumber HTML Report
         uses: actions/upload-artifact@v4
         with:
-          name: cucumber-bdd-report
+          name: cucumber-report-${{ github.run_number }}
           path: cypress/reports/
           retention-days: 30
 
@@ -70,9 +70,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: cypress/reports
+          destination_dir: reports/run-${{ github.run_number }}
           keep_files: true
+          enable_jekyll: false
      
-      # 9. Report URL in Comments   
+      # 9. Wait for Page for Deployment  
+      - name: Wait for GitHub Pages Deployment
+        if: always()
+        run: sleep 10
+
+      # 10. Report URL in Comments 
       - name: Comment Report URL
         if: always()
         run: |
