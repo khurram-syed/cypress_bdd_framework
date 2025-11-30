@@ -18,6 +18,10 @@ on:
         options:
           - chrome
           - edge
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   cypress-run:
@@ -42,8 +46,12 @@ jobs:
       # 4. Clean reports
       - name: Clean previous reports
         run: npm run clean:reports
-
-      # 5. Run tests with manual tag & browser
+    
+      - name: Run Cypress tests (Main branch)
+        if: github.event_name == 'push'
+        run: npm run test:ci
+     
+        # 5. Run tests with manual tag & browser
       - name: Run Cypress Tests
         run: |
           npx cypress run \
@@ -63,11 +71,13 @@ jobs:
           echo ""
           echo "📄 Looking for index.html:"
           find cypress/reports -name "index.html" || echo "No index.html found!"
+    
       # 7. Upload report artifact (UPDATED TO v4)
       - name: Upload Cucumber HTML Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cucumber-bdd-report
+          name: cucumber-report-${{ github.run_number }}
           path: cypress/reports/
           retention-days: 30
           
@@ -77,9 +87,10 @@ jobs:
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: cypress/reports
+          publish_dir: ./cypress/reports
+          destination_dir: reports/run-${{ github.run_number }}
           keep_files: true
+          enable_jekyll: false
      
       # 9. Wait for Page for Deployment  
       - name: Wait for GitHub Pages Deployment
@@ -89,17 +100,11 @@ jobs:
       # 10. Report URL in Comments 
       - name: Comment Report URL
         if: always()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const reportUrl = `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html`;
-            console.log(`📊 Report available at: ${reportUrl}`);
-            
-            if (context.eventName === 'workflow_dispatch') {
-              github.rest.repos.createCommitComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                commit_sha: context.sha,
-                body: `## 🧪 Test Report\n\n📊 View HTML Report: [Click Here](${reportUrl})\n\n**Browser:** ${{ inputs.browser }}\n**Tags:** ${{ inputs.tags }}`
-              });
-            }
+        run: |
+          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/index.html"
+          echo "📊 Report URL: $REPORT_URL"
+          echo ""
+          echo "🔗 Direct link to reports folder:"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/run-${{ github.run_number }}/"
+          echo ""
+          echo "⏳ Note: GitHub Pages may take 1-2 minutes to deploy. If you see 404, wait a moment and refresh."
