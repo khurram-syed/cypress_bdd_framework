@@ -203,3 +203,5 @@ Includes:
 * Execution duration
 * Test metadata
 
+<img width="1825" height="800" alt="image" src="https://github.com/user-attachments/assets/35fac066-a541-427a-8fff-aef49d71dff6" />
+
